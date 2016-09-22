@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 import fragment.nav.FragmentAlbum;
 import fragment.nav.FragmentMusicHot;
@@ -22,6 +24,7 @@ import fragment.nav.Login;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    RelativeLayout rltlBaihat,rltlAlbum,rltlNghesi,rltlPlaylist,rltlThumuc,rltlDownload,rltlLike,rltlUpload;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        itMusicOff();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -38,6 +43,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -102,5 +109,23 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public void itMusicOff(){
+        rltlBaihat = (RelativeLayout)findViewById(R.id.rltlBaihat);
+        rltlAlbum = (RelativeLayout)findViewById(R.id.rltlAlbum);
+        rltlNghesi = (RelativeLayout)findViewById(R.id.rltlNghesi);
+        rltlPlaylist = (RelativeLayout)findViewById(R.id.rltlPlaylist);
+        rltlThumuc = (RelativeLayout)findViewById(R.id.rltlThumuc);
+        rltlDownload = (RelativeLayout)findViewById(R.id.rltlDownload);
+        rltlLike = (RelativeLayout)findViewById(R.id.rltlLike);
+        rltlUpload = (RelativeLayout)findViewById(R.id.rltlUpload);
+
+        rltlBaihat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MusicOff.class);
+                startActivity(intent);
+            }
+        });
     }
 }
