@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dangnhap"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Đăng nhập" />
+        <item
+            android:id="@+id/nav_music"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="My music" />
+
+    </group>
+
+    <item android:title="Zing Mp3">
+        <menu>
+            <item
+                android:id="@+id/nav_nhachot"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Nhạc hot" />
+            <item
+                android:id="@+id/nav_album"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Album" />
+            <item
+                android:id="@+id/nav_video"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Video" />
+            <item
+                android:id="@+id/nav_nghesi"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Nghệ sĩ" />
+        </menu>
+    </item>
+
+</menu>
